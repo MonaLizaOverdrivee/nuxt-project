@@ -1,27 +1,26 @@
 <template>
-  <div class="container">
-    <div class="border-red-800 border-2">
-      <Logo />
-      <h1 class="title">nuxt-test</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div class="border-red-800 border-2">
+    <Logo />
+    <h1 class="title">nuxt-test</h1>
+    <div class="links">
+      <a
+        href="https://nuxtjs.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--green"
+      >
+        Documentation
+      </a>
+      <a
+        href="https://github.com/nuxt/nuxt.js"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button--grey"
+      >
+        GitHub
+      </a>
     </div>
+    <div style="height: 800px"></div>
   </div>
 </template>
 

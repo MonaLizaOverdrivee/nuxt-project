@@ -1,14 +1,16 @@
 <template>
   <div>
     <AppMenu />
-    <Nuxt />
+    <div class="container">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
 <script>
 import AppMenu from '../components/MainMenu/AppMenu'
 export default {
-  components: { AppMenu }
+  components: { AppMenu },
 }
 </script>
 
