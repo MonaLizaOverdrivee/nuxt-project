@@ -16,6 +16,11 @@ module.exports = {
       '2xl': '1536px',
       // => @media (min-width: 1536px) { ... }
     },
-    extend: {},
+    extend: {
+      gridTemplateRows: {
+        '5-auto': 'repeat(5, minmax(0, auto))',
+        '6-auto': 'repeat(6, minmax(0, auto))',
+      },
+    },
   },
 }
