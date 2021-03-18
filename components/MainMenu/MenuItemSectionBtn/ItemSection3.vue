@@ -1,11 +1,23 @@
 <template>
-  <div
-    class="p-1 border-red-800 border-2 row-start-2 row-end-7 col-start-auto"
-  ></div>
+  <div class="row-start-2 row-end-7 flex justify-center">
+    <div
+      v-for="itm in 4"
+      :key="itm"
+      class="flex-auto p-2 border-2 border-blue-500 m-2 rounded-xl bg-blue-100"
+    >
+      <span class="font-medium">Saddasd;sladl</span>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {}
 </script>
 
-<style></style>
+<style scoped>
+.section {
+  max-width: 30rem;
+  min-width: 20rem;
+  height: 14rem;
+}
+</style>
