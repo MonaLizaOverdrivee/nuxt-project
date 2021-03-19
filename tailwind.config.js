@@ -21,6 +21,9 @@ module.exports = {
         '5-auto': 'repeat(5, minmax(0, auto))',
         '6-auto': 'repeat(6, minmax(0, auto))',
       },
+      colors: {
+        primary: '#0088cc',
+      },
     },
   },
 }

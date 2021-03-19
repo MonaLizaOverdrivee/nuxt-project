@@ -1,5 +1,5 @@
 <template>
-  <div class="border-red-800 border-2">
+  <div class="border-red-800 border-2 bg-primary">
     <Logo />
     <h1 class="title">nuxt-test</h1>
     <div class="links">
@@ -20,6 +20,10 @@
         GitHub
       </a>
     </div>
+    <div class="h-40 mt-4 flex items-center justify-center">
+      <font-awesome-icon icon="home" class="f-icon" />
+    </div>
+
     <div style="height: 800px"></div>
   </div>
 </template>

@@ -28,8 +28,18 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxt/postcss8',
+    '@nuxtjs/fontawesome',
   ],
-
+  fontawesome: {
+    icons: {
+      solid: ['faHome'],
+    },
+  },
+  tailwindcss: {
+    // add '~tailwind.config` alias
+    exposeConfig: true,
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios

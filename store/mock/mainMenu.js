@@ -88,7 +88,9 @@ export default [
     url: '/international_action',
     bg: 'rgb(115, 181, 215)',
     subMenuList: [],
-    subMenuBtn: {},
+    subMenuBtn: {
+      icon: ['user-graduate', 'user-tie', 'globe', 'passport', 'users'],
+    },
   },
   {
     name: 'Наука',

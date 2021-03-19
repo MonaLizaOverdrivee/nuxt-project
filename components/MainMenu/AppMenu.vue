@@ -33,7 +33,7 @@
     <div class="relative">
       <div
         :class="[
-          'bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-blue-600 shadow-xl',
+          'bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl',
           { hidden: !isActive },
         ]"
       >
@@ -43,7 +43,7 @@
         >
           <div class="flex-auto">
             <nuxt-link to="/">
-              <span class="text-blue-600 font-medium">Перейти к разделу</span>
+              <span class="text-primary font-medium">Перейти к разделу</span>
             </nuxt-link>
           </div>
           <svg
@@ -70,7 +70,7 @@
           class="p-1 pl-3"
         >
           <nuxt-link to="/">
-            <span class="underline text-blue-600">{{ itm.name }}</span>
+            <span class="underline text-primary">{{ itm.name }}</span>
           </nuxt-link>
         </div>
         <component :is="'Section' + (indexItem + 1)" />
@@ -144,6 +144,7 @@ export default {
 
 <style>
 .active {
-  @apply bg-blue-600 text-white;
+  @apply bg-primary;
+  @apply text-white;
 }
 </style>
