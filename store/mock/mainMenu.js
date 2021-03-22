@@ -37,7 +37,23 @@ export default [
         url: '',
       },
     ],
-    subMenuBtn: {},
+    subMenuBtn: [
+      {
+        title: 'Обратиться к ректору',
+        url: '',
+        icon: 'mail-bulk',
+      },
+      {
+        title: 'Информационный портал Университета',
+        url: '',
+        icon: 'info-circle',
+      },
+      {
+        title: 'Электронный деканат',
+        url: '',
+        icon: 'database',
+      },
+    ],
   },
   {
     name: 'Образование',
@@ -46,10 +62,6 @@ export default [
     subMenuList: [
       {
         name: 'Профессионально-общественная аккредитация',
-        url: '',
-      },
-      {
-        name: 'Магистратура',
         url: '',
       },
       {
@@ -81,16 +93,72 @@ export default [
         url: '',
       },
     ],
-    subMenuBtn: {},
+    subMenuBtn: [
+      {
+        title: 'Факультеты',
+        url: '',
+        icon: 'university',
+      },
+      {
+        title: 'Магистратура',
+        url: '',
+        icon: 'book-reader',
+      },
+      {
+        title: 'Абитуриентам',
+        url: '',
+        icon: 'user-friends',
+      },
+      {
+        title: 'Студентам',
+        url: '',
+        icon: 'user-graduate',
+      },
+      {
+        title: 'Выпускникам',
+        url: '',
+        icon: 'award',
+      },
+      {
+        title: 'Преподавателям и сотрудникам',
+        url: '',
+        icon: 'user-tie',
+      },
+    ],
   },
   {
     name: 'Международная деятельность',
     url: '/international_action',
     bg: 'rgb(115, 181, 215)',
     subMenuList: [],
-    subMenuBtn: {
-      icon: ['user-graduate', 'user-tie', 'globe', 'passport', 'users'],
-    },
+    subMenuBtn: [
+      {
+        title: 'Студентам ГМУ',
+        url: '/sad',
+        icon: 'user-graduate',
+      },
+      {
+        title: 'Сотрудникам ГМУ',
+        url: '',
+        icon: 'user-tie',
+      },
+      {
+        title: 'Международное сотрудничество',
+        url: '',
+        icon: 'globe',
+      },
+      {
+        title: 'Иностранным студентам',
+        url: '',
+        icon: 'passport',
+      },
+      {
+        title: 'Международные проекты',
+        url: '',
+        icon: 'users',
+      },
+      // icon: ['user-graduate', 'user-tie', 'globe', 'passport', 'users'],
+    ],
   },
   {
     name: 'Наука',
@@ -125,12 +193,24 @@ export default [
         name: 'Патентное обеспечение',
         url: '',
       },
+    ],
+    subMenuBtn: [
       {
-        name: 'Журналы университета',
+        title: 'Аспирантура',
         url: '',
+        icon: 'atom',
+      },
+      {
+        title: 'Диссертационный совет',
+        url: '',
+        icon: 'chalkboard-teacher',
+      },
+      {
+        title: 'Журналы университета',
+        url: '',
+        icon: 'newspaper',
       },
     ],
-    subMenuBtn: {},
   },
   {
     name: 'Культура и спорт',

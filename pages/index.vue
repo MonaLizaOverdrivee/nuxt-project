@@ -20,9 +20,7 @@
         GitHub
       </a>
     </div>
-    <div class="h-40 mt-4 flex items-center justify-center">
-      <font-awesome-icon icon="home" class="f-icon" />
-    </div>
+    <div class="h-40 mt-4 flex items-center justify-center"></div>
 
     <div style="height: 800px"></div>
   </div>

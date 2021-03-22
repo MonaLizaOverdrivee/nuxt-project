@@ -73,7 +73,10 @@
             <span class="underline text-primary">{{ itm.name }}</span>
           </nuxt-link>
         </div>
-        <component :is="'Section' + (indexItem + 1)" />
+        <component
+          :is="'Section' + (indexItem + 1)"
+          :items-data="selectedItemMenu.subMenuBtn"
+        />
       </div>
       <div
         v-if="mobileMenuOpen"

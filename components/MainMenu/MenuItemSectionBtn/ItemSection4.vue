@@ -1,11 +1,26 @@
 <template>
-  <div
-    class="p-1 border-red-800 border-2 row-start-2 row-end-7 col-start-auto"
-  ></div>
+  <div class="row-start-2 row-end-7 flex flex-wrap">
+    <SectionBtn
+      v-for="(itm, i) in itemsData"
+      :key="i"
+      :title="itm.title"
+      :icon="itm.icon"
+    />
+  </div>
 </template>
 
 <script>
-export default {}
+import SectionBtn from './ItemSectionBtn'
+
+export default {
+  components: { SectionBtn },
+  props: {
+    itemsData: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
 </script>
 
 <style></style>

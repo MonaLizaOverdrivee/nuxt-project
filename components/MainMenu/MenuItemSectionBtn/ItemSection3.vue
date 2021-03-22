@@ -1,19 +1,20 @@
 <template>
   <div class="row-start-2 row-end-7 flex justify-center">
     <div
-      v-for="itm in 5"
+      v-for="itm in itemsData"
       :key="itm"
       class="h-40 2xl:h-56 section relative bg-blue-300 m-2 rounded-xl"
+      @click="$router.push(itm.url)"
     >
       <div
         class="section_content absolute inset-0 p-3 border-2 border-blue-100 rounded-xl bg-blue-100"
       >
         <div class="relative flex flex-col justify-between h-full w-full">
           <div class="absolute bottom-0 left-0 h-1/2 w-1/2">
-            <font-awesome-icon icon="home" class="f-icon" />
+            <font-awesome-icon :icon="itm.icon" class="f-icon" />
           </div>
           <div>
-            <span class="font-medium">Saddasd;sladl</span>
+            <span class="font-medium">{{ itm.title }}</span>
           </div>
           <div class="text-right text-5xl">&#8594;</div>
         </div>
@@ -23,7 +24,14 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    itemsData: {
+      type: Array,
+      default: () => [],
+    },
+  },
+}
 </script>
 
 <style scoped>

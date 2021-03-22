@@ -1,3 +1,5 @@
+import icons from './assets/icons'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -32,9 +34,7 @@ export default {
     '@nuxtjs/fontawesome',
   ],
   fontawesome: {
-    icons: {
-      solid: ['faHome'],
-    },
+    icons,
   },
   tailwindcss: {
     // add '~tailwind.config` alias
