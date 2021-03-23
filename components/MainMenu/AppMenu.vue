@@ -9,7 +9,7 @@
           :class="{ active: idx === indexItem }"
           @click="onClickMenu(idx, item)"
         >
-          {{ item.name }}
+          {{ item.title }}
         </button>
       </div>
       <svg
@@ -70,7 +70,7 @@
           class="p-1 pl-3"
         >
           <nuxt-link to="/">
-            <span class="underline text-primary">{{ itm.name }}</span>
+            <span class="underline text-primary">{{ itm.title }}</span>
           </nuxt-link>
         </div>
         <component
