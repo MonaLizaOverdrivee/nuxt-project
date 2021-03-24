@@ -53,6 +53,11 @@ export default [
         url: '',
         icon: 'database',
       },
+      {
+        title: 'Документы',
+        url: '',
+        icon: 'file-alt',
+      },
     ],
   },
   {

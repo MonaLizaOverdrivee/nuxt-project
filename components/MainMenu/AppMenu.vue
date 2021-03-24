@@ -1,7 +1,14 @@
 <template>
   <div class="sticky top-0 bg-white">
-    <nav class="p-4 font-normal shadow-xl">
-      <div class="hidden lg:flex">
+    <nav class="px-4 font-normal flex shadow-xl">
+      <div class="h-10 lg:h-16 py-1 self-center">
+        <img
+          class="h-full"
+          src="https://assets.vuzopoisk.ru/images/logo/1tgMsxa9.jpg"
+          alt=""
+        />
+      </div>
+      <div class="hidden lg:flex py-4">
         <button
           v-for="(item, idx) in mainMenu"
           :key="idx"
@@ -13,14 +20,14 @@
         </button>
       </div>
       <svg
-        class="h-6 w-6 ml-auto lg:hidden hover:bg-gray-100 rounded"
+        class="h-6 w-6 ml-auto lg:hidden hover:bg-gray-100 rounded self-center"
         x-description="Heroicon name: outline/menu"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
         aria-hidden="true"
-        @click="mobileMenuOpen = !mobileMenuOpen"
+        @click="mobileMenuVisible = !mobileMenuVisible"
       >
         <path
           stroke-linecap="round"
@@ -33,8 +40,8 @@
     <div class="relative">
       <div
         :class="[
-          'bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl',
-          { hidden: !isActive },
+          'bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl menu__content',
+          { 'is-open': isActive },
         ]"
       >
         <div
@@ -70,7 +77,9 @@
           class="p-1 pl-3"
         >
           <nuxt-link to="/">
-            <span class="underline text-primary">{{ itm.title }}</span>
+            <span class="underline text-primary hover:text-blue-300">{{
+              itm.title
+            }}</span>
           </nuxt-link>
         </div>
         <component
@@ -79,8 +88,8 @@
         />
       </div>
       <div
-        v-if="mobileMenuOpen"
-        class="lg:hidden absolute top-0 left-0 bg-gray-200 p-4"
+        v-if="mobileMenuVisible"
+        class="lg:hidden absolute top-0 left-0 bg-gray-200 p-4 flex flex-wrap"
       >
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, et. Ab
@@ -110,14 +119,14 @@ export default {
     return {
       indexItem: null,
       isActive: false,
-      mobileMenuOpen: false,
+      mobileMenuVisible: false,
       selectedItemMenu: {},
       mainMenu,
     }
   },
   computed: {
     burgerIcon() {
-      return this.mobileMenuOpen
+      return this.mobileMenuVisible
         ? 'M6 18L18 6M6 6l12 12'
         : 'M4 6h16M4 12h16M4 18h16'
     },
@@ -149,5 +158,13 @@ export default {
 .active {
   @apply bg-primary;
   @apply text-white;
+}
+.menu__content {
+  transform-origin: top;
+  transform: scaleY(0);
+  transition: transform 0.3s linear;
+}
+.is-open {
+  transform: scaleY(1);
 }
 </style>

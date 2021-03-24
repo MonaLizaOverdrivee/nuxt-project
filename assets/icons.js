@@ -15,5 +15,6 @@ export default {
     'faAtom',
     'faNewspaper',
     'faChalkboardTeacher',
+    'faFileAlt',
   ],
 }

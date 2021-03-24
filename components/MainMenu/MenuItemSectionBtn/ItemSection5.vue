@@ -1,18 +1,32 @@
 <template>
-  <div class="row-start-2 row-end-7 col-start-auto relative section">
-    <div class="grid grid-cols-6 grid-flow-row h-56 gap-1">
-      <div v-for="itm in 18" :key="itm">
+  <div class="row-start-2 row-end-7 col-start-auto section relative">
+    <div
+      class="absolute inset-0 flex justify-center items-center section__title-wraper"
+    >
+      <span class="section__title">Фотогаллерея</span>
+    </div>
+    <div class="flex justify-center">
+      <div class="self-end w-80 h-40 -mr-28 mb-2 section__container-img">
         <img
-          class="img"
-          src="https://www.rgo.ru/sites/default/files/styles/head_image_article/public/odna_iz_konkursnyh_rabot_2011_goda._ogonkovyy_miting._v.a._masoshin.jpg?itok=xsNrqUux"
+          class="section__img"
+          src="https://www.aumsu.ru/images/news/03.2021/12.jpg"
           alt=""
         />
       </div>
-    </div>
-    <div
-      class="absolute flex inset-0 justify-center items-center bg-primary opacity-70 rounded-lg cursor-pointer section__wraper"
-    >
-      <span class="text-white text-3xl section__title">Фотогалерея</span>
+      <div class="self-center w-56 h-48 xl:h-64 section__container-img">
+        <img
+          class="section__img"
+          src="https://www.aumsu.ru/images/news/08.2020/11.jpg"
+          alt=""
+        />
+      </div>
+      <div class="self-center h-44 w-80 -ml-16 section__container-img">
+        <img
+          class="section__img"
+          src="https://www.aumsu.ru/images/news/12.2020/35.jpg"
+          alt=""
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -22,20 +36,36 @@ export default {}
 </script>
 
 <style scoped>
-.img {
-  object-fit: cover;
+.section {
+  @apply cursor-pointer;
+}
+.section__img {
   width: 100%;
   height: 100%;
-  @apply rounded-lg;
+  object-fit: cover;
+  object-position: center;
 }
-.section:hover .section__wraper {
-  @apply opacity-100;
+.section__container-img {
+  transition: all 0.3s linear;
+}
+.section__title {
+  @apply text-3xl;
+  @apply text-white;
+  @apply invisible;
+}
+.section:hover .section__container-img {
+  transition: all 0.3s linear;
+  @apply h-64;
+  @apply w-2/6;
+  @apply my-0;
+  @apply mx-1;
+}
+.section:hover .section__title-wraper {
+  @apply bg-primary;
+  @apply opacity-80;
 }
 .section:hover .section__title {
+  @apply visible;
   @apply underline;
-}
-.section__wraper,
-.section__title {
-  transition: all 0.3s linear;
 }
 </style>
