@@ -16,5 +16,7 @@ export default {
     'faNewspaper',
     'faChalkboardTeacher',
     'faFileAlt',
+    'faTimes',
+    'faBars',
   ],
 }

@@ -23,5 +23,6 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'vue/attribute-hyphenation': 'off',
   },
 }

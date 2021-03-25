@@ -42,8 +42,8 @@ export default {}
 .section__img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  @apply object-cover;
+  @apply object-center;
 }
 .section__container-img {
   transition: all 0.3s linear;

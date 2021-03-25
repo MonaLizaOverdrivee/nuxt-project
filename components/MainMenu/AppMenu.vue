@@ -19,28 +19,17 @@
           {{ item.title }}
         </button>
       </div>
-      <svg
-        class="h-6 w-6 ml-auto lg:hidden hover:bg-gray-100 rounded self-center"
-        x-description="Heroicon name: outline/menu"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        aria-hidden="true"
+      <font-awesome-icon
+        :icon="burgerIcon"
+        size="lg"
+        class="self-center cursor-pointer hover:text-primary ml-auto lg:hidden"
         @click="mobileMenuVisible = !mobileMenuVisible"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          :d="burgerIcon"
-        ></path>
-      </svg>
+      />
     </nav>
     <div class="relative">
       <div
         :class="[
-          'bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl menu__content',
+          'invisible lg:visible bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl menu__content',
           { 'is-open': isActive },
         ]"
       >
@@ -53,23 +42,12 @@
               <span class="text-primary font-medium">Перейти к разделу</span>
             </nuxt-link>
           </div>
-          <svg
-            class="h-6 w-6 cursor-pointer hover:bg-gray-100 rounded"
-            x-description="Heroicon name: outline/menu"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
+          <font-awesome-icon
+            icon="times"
+            size="lg"
+            class="self-center cursor-pointer hover:text-primary"
             @click="close"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            ></path>
-          </svg>
+          />
         </div>
         <div
           v-for="(itm, idx) in selectedItemMenu.subMenuList"
@@ -87,26 +65,14 @@
           :items-data="selectedItemMenu.subMenuBtn"
         />
       </div>
-      <div
-        v-if="mobileMenuVisible"
-        class="lg:hidden absolute top-0 left-0 bg-gray-200 p-4 flex flex-wrap"
-      >
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum, et. Ab
-          est vero dignissimos facere aliquid saepe. Amet molestiae cumque
-          voluptatibus delectus, natus molestias sunt, ad, soluta perspiciatis
-          iusto harum. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Ab fuga quos eaque quibusdam rerum vitae. Amet, culpa, modi dolorum,
-          dolor voluptatum maxime est consequatur vitae iste voluptatibus
-          suscipit laudantium soluta.
-        </p>
-      </div>
+      <AppMenuMobile :mobileMenuVisible="mobileMenuVisible" :menu="mainMenu" />
     </div>
   </div>
 </template>
 
 <script>
 import mainMenu from '../../store/mock/mainMenu'
+import AppMenuMobile from './AppMenuMobile'
 import Section1 from './MenuItemSectionBtn/ItemSection1'
 import Section2 from './MenuItemSectionBtn/ItemSection2'
 import Section3 from './MenuItemSectionBtn/ItemSection3'
@@ -114,7 +80,15 @@ import Section4 from './MenuItemSectionBtn/ItemSection4'
 import Section5 from './MenuItemSectionBtn/ItemSection5'
 import Section6 from './MenuItemSectionBtn/ItemSection6'
 export default {
-  components: { Section1, Section2, Section3, Section4, Section5, Section6 },
+  components: {
+    Section1,
+    Section2,
+    Section3,
+    Section4,
+    Section5,
+    Section6,
+    AppMenuMobile,
+  },
   data() {
     return {
       indexItem: null,
@@ -126,9 +100,7 @@ export default {
   },
   computed: {
     burgerIcon() {
-      return this.mobileMenuVisible
-        ? 'M6 18L18 6M6 6l12 12'
-        : 'M4 6h16M4 12h16M4 18h16'
+      return this.mobileMenuVisible ? 'times' : 'bars'
     },
     colInGrid() {
       return Object.keys(this.selectedItemMenu).length > 0
