@@ -18,5 +18,6 @@ export default {
     'faFileAlt',
     'faTimes',
     'faBars',
+    'faFileSignature',
   ],
 }

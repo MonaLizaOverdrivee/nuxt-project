@@ -1,0 +1,22 @@
+body.color-scheme--white {
+  @apply text-black;
+  @apply bg-white;
+}
+body.color-scheme--black {
+  @apply text-white;
+  @apply bg-black;
+}
+body.color-scheme--brown {
+  @apply text-green-300;
+  @apply bg-yellow-900;
+}
+
+body.size-scheme--small {
+  @apply text-lg;
+}
+body.size-scheme--medium {
+  @apply text-xl;
+}
+body.size-scheme--large {
+  @apply text-2xl;
+}

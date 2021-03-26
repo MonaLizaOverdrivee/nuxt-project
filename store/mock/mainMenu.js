@@ -194,10 +194,6 @@ export default [
         title: 'Научные исследования и разработки',
         url: '',
       },
-      {
-        title: 'Патентное обеспечение',
-        url: '',
-      },
     ],
     subMenuBtn: [
       {
@@ -214,6 +210,11 @@ export default [
         title: 'Журналы университета',
         url: '',
         icon: 'newspaper',
+      },
+      {
+        title: 'Патентное обеспечение',
+        url: '',
+        icon: 'file-signature',
       },
     ],
   },

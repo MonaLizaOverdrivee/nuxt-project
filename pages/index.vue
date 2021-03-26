@@ -1,33 +1,40 @@
 <template>
-  <div class="border-red-800 border-2 bg-primary">
-    <Logo />
-    <h1 class="title">nuxt-test</h1>
-    <div class="links">
-      <a
-        href="https://nuxtjs.org/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button--green"
-      >
-        Documentation
-      </a>
-      <a
-        href="https://github.com/nuxt/nuxt.js"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="button--grey"
-      >
-        GitHub
-      </a>
-    </div>
-    <div class="h-40 mt-4 flex items-center justify-center"></div>
+  <div>
+    <AppSlider />
+    <div class="border-red-800 border-2 bg-primary">
+      <Logo />
+      <h1 class="title">nuxt-test</h1>
+      <div class="links">
+        <a
+          href="https://nuxtjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--green"
+        >
+          Documentation
+        </a>
+        <a
+          href="https://github.com/nuxt/nuxt.js"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="button--grey"
+        >
+          GitHub
+        </a>
+      </div>
+      <div class="h-40 mt-4 flex items-center justify-center"></div>
 
-    <div style="height: 800px"></div>
+      <div style="height: 800px"></div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {}
+import AppSlider from '../components/Slider/AppSlider'
+
+export default {
+  components: { AppSlider },
+}
 </script>
 
 <style>
