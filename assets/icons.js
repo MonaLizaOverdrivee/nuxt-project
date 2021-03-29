@@ -19,5 +19,7 @@ export default {
     'faTimes',
     'faBars',
     'faFileSignature',
+    'faChevronRight',
+    'faChevronLeft',
   ],
 }

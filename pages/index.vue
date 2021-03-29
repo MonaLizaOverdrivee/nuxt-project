@@ -1,7 +1,7 @@
 <template>
   <div>
     <AppSlider />
-    <div class="border-red-800 border-2 bg-primary">
+    <div class="border-red-800 border-2 bg-primary mt-10">
       <Logo />
       <h1 class="title">nuxt-test</h1>
       <div class="links">
@@ -43,14 +43,6 @@ export default {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;
 }
 */
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
 
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,

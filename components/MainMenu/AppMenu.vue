@@ -1,5 +1,5 @@
 <template>
-  <div class="sticky top-0 bg-white">
+  <div class="sticky top-0 bg-white z-50">
     <nav class="px-4 font-normal flex shadow-xl">
       <div class="h-10 lg:h-16 py-1 self-center">
         <img
