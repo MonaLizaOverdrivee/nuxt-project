@@ -3,7 +3,8 @@ export default [
     id: 'a0asdkOdk',
     title:
       'Курсант Ушаковки получил благодарность от судоходной компании «V.Ships. Norway»',
-    text: 'Some text adsa',
+    text: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis omnis repudiandae voluptatum mollitia laboriosam, delectus ipsum atque illum natus eaque consequatur obcaecati provident optio odit sequi eius cum aut labore.
+    Dolore cupiditate itaque rerum vol`,
     date: 1617017929452,
     img:
       'https://i.pinimg.com/originals/ba/6c/d4/ba6cd45d22f01b59c1c4605c4e6dabab.jpg',
@@ -11,7 +12,8 @@ export default [
   {
     id: 'a0asd435fkOdk',
     title: 'Some title 2',
-    text: 'Some textqweq dsaasd s',
+    text: ` Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis omnis repudiandae voluptatum mollitia laboriosam, delectus ipsum atque illum natus eaque consequatur obcaecati provident optio odit sequi eius cum aut labore.
+    Dolore cupiditate itaque rerum voluptate ipsa sapiente ea ab labore tempore, corrupti perspiciatis natus nisi sed ipsum totam blanditiis molestiae beatae, voluptatem`,
     date: 1617017924752,
     img:
       'https://telegram.org.ru/uploads/posts/2020-02/1582888810_priroda-1920x1080-priroda-21456.jpg',

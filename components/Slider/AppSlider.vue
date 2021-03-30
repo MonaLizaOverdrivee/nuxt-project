@@ -1,30 +1,39 @@
 <template>
-  <div class="pt-10">
-    <div class="flex container">
+  <div class="pt-2 md:pt-10">
+    <div class="flex container flex-col-reverse md:flex-row">
       <div
-        class="xl:h-96 mt-20 w-3/5 xl:w-3/5 2xl:w-2/5 bg-primary z-10 flex flex-col p-6"
+        class="xl:h-96 md:mt-20 md:w-3/5 xl:w-3/6 2xl:w-2/5 bg-primary z-10 flex flex-col p-6"
       >
         <transition :name="animatedSlide" mode="out-in">
-          <h1 :key="news[selectedNewsIndex].title" class="text-white">
+          <h1
+            :key="news[selectedNewsIndex].title"
+            class="text-white text-xl md:text-2xl lg:text-4xl"
+          >
             {{ news[selectedNewsIndex].title }}
           </h1>
         </transition>
-        <div class="my-2">
+        <div class="sm:my-2">
           <transition :name="animatedSlide" mode="out-in">
             <i :key="Math.random()" class="text-white text-sm">{{
               new Date().toLocaleString()
             }}</i>
           </transition>
         </div>
-        <div>
+        <div class="hidden sm:block">
           <transition :name="animatedSlide" mode="out-in">
             <p :key="news[selectedNewsIndex].text" class="text-white">
-              {{ news[selectedNewsIndex].text }}
+              {{ textSlide }}
             </p>
           </transition>
         </div>
-        <div>4</div>
-        <div class="flex flex-auto">
+        <div class="py-2">
+          <button
+            class="border p-2 text-white hover:bg-white hover:text-primary font-middle"
+          >
+            Читать дальше
+          </button>
+        </div>
+        <div class="flex flex-auto mt-4 sm:mt-0">
           <div class="flex items-center flex-auto justify-between self-end">
             <font-awesome-icon
               icon="chevron-left"
@@ -33,39 +42,14 @@
             />
             <div>
               <input
-                id="news_1"
+                v-for="(_, idx) in news.length"
+                :id="'news_' + idx"
+                :key="'mark_' + idx"
                 v-model="selectedNewsIndex"
                 type="radio"
                 name="mark_news"
-                value="0"
-              />
-              <input
-                id="news_2"
-                v-model="selectedNewsIndex"
-                type="radio"
-                name="mark_news"
-                value="1"
-              />
-              <input
-                id="news_3"
-                v-model="selectedNewsIndex"
-                type="radio"
-                name="mark_news"
-                value="2"
-              />
-              <input
-                id="news_4"
-                v-model="selectedNewsIndex"
-                type="radio"
-                name="mark_news"
-                value="3"
-              />
-              <input
-                id="news_5"
-                v-model="selectedNewsIndex"
-                type="radio"
-                name="mark_news"
-                value="4"
+                :value="idx"
+                class="mx-1"
               />
             </div>
             <font-awesome-icon
@@ -76,7 +60,7 @@
           </div>
         </div>
       </div>
-      <div class="h-96 flex-auto -ml-64 w-11/12">
+      <div class="h-56 md:h-96 flex-auto md:-ml-64 md:w-11/12">
         <transition :name="animatedSlide" mode="out-in">
           <img
             :key="news[selectedNewsIndex].img"
@@ -101,10 +85,20 @@ export default {
       animatedSlide: null,
     }
   },
+  computed: {
+    textSlide() {
+      return news[this.selectedNewsIndex].text.slice(0, 270) + '...'
+    },
+  },
   watch: {
     selectedNewsIndex(value, oldValue) {
       this.animatedSlide = value > oldValue ? 'animated-right' : 'animated-left'
     },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      setInterval(this.clickNext, 9000)
+    })
   },
   methods: {
     clickPrev() {
