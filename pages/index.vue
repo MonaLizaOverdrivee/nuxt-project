@@ -1,6 +1,7 @@
 <template>
   <div>
-    <AppSlider />
+    <SliderSection />
+    <AddmissFaculSection />
     <div class="border-red-800 border-2 bg-primary mt-10">
       <Logo />
       <h1 class="title">nuxt-test</h1>
@@ -30,10 +31,11 @@
 </template>
 
 <script>
-import AppSlider from '../components/Slider/AppSlider'
+import SliderSection from '@/components/Home/Slider/SliderSection'
+import AddmissFaculSection from '@/components/Home/AddmissionsAndFaculties/CommonBlock'
 
 export default {
-  components: { AppSlider },
+  components: { SliderSection, AddmissFaculSection },
 }
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-2 md:pt-10">
+  <div class="pt-2 md:pt-10 overflow-x-hidden">
     <div class="flex container flex-col-reverse md:flex-row">
       <div
         class="xl:h-96 md:mt-20 md:w-3/5 xl:w-3/6 2xl:w-2/5 bg-primary z-10 flex flex-col p-6"
@@ -75,7 +75,7 @@
 </template>
 
 <script>
-import news from '../../store/mock/news'
+import news from '@/store/mock/news'
 
 export default {
   data() {
@@ -87,7 +87,7 @@ export default {
   },
   computed: {
     textSlide() {
-      return news[this.selectedNewsIndex].text.slice(0, 270) + '...'
+      return news[this.selectedNewsIndex].text.slice(0, 200) + '...'
     },
   },
   watch: {
