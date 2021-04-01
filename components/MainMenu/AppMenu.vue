@@ -39,7 +39,9 @@
         >
           <div class="flex-auto">
             <nuxt-link to="/">
-              <span class="text-primary font-medium">Перейти к разделу</span>
+              <span class="text-primary font-medium text-access"
+                >Перейти к разделу</span
+              >
             </nuxt-link>
           </div>
           <font-awesome-icon
@@ -55,9 +57,10 @@
           class="p-1 pl-3"
         >
           <nuxt-link to="/">
-            <span class="underline text-primary hover:text-blue-300">{{
-              itm.title
-            }}</span>
+            <span
+              class="underline text-primary hover:text-blue-300 text-access"
+              >{{ itm.title }}</span
+            >
           </nuxt-link>
         </div>
         <component

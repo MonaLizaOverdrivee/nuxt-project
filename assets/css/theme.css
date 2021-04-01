@@ -17,6 +17,9 @@ body.color-scheme--white {
   @apply text-black;
   @apply bg-white;
 }
+body.color-scheme--white .text-access {
+  @apply text-black;
+}
 body.color-scheme--black {
   @apply text-white;
   @apply bg-black;
@@ -29,9 +32,12 @@ body.color-scheme--brown {
 body.size-scheme--small {
   @apply text-lg;
 }
-body.size-scheme--medium {
+body.size-scheme--medium,
+body.size-scheme--medium .text-access {
   @apply text-xl;
 }
-body.size-scheme--large {
+
+body.size-scheme--large,
+body.size-scheme--large .text-access {
   @apply text-2xl;
 }

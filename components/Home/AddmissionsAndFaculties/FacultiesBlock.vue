@@ -6,18 +6,41 @@
         v-model="search"
         type="text"
         name="фыв"
-        placeholder="Факультеты, кафедры, направления"
+        placeholder="Факультеты, кафедры, направления подготовки"
         class="border-2 rounded w-full p-2 focus:outline-none focus:border-primary"
       />
-      <div class="mt-2.5 overflow-y-auto h-40">
+      <div class="mt-2.5 overflow-y-auto h-48">
         <div class="search__rezult-block">
+          <div>
+            <nuxt-link
+              to="/"
+              class="text-xs font-medium text-primary hover:underline"
+              >Специальности</nuxt-link
+            >
+          </div>
           <span class="font-medium">Информационные системы и технологии</span>
           <i class="text-xs block">Предметы: русский, математика, английский</i>
         </div>
         <div class="search__rezult-block">
+          <div>
+            <nuxt-link
+              to="/"
+              class="text-xs font-medium text-primary hover:underline"
+              >Факультеты</nuxt-link
+            >
+          </div>
           <span class="font-medium">Судомеханический факультет</span>
         </div>
-        <div class="search__rezult-block">asd</div>
+        <div class="search__rezult-block">
+          <div>
+            <nuxt-link
+              to="/"
+              class="text-xs font-medium text-primary hover:underline"
+              >Кафедры</nuxt-link
+            >
+          </div>
+          <span class="font-medium">Высшая математика и физика</span>
+        </div>
       </div>
     </div>
     <div class="flex flex-col ml-2.5">

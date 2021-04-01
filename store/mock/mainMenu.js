@@ -82,7 +82,7 @@ export default [
         url: '',
       },
       {
-        title: 'Наши специальности',
+        title: 'Преподавателям и сотрудникам',
         url: '',
       },
       {
@@ -105,6 +105,11 @@ export default [
         icon: 'university',
       },
       {
+        title: 'Наши специальности',
+        url: '',
+        icon: 'toolbox',
+      },
+      {
         title: 'Магистратура',
         url: '',
         icon: 'book-reader',
@@ -123,11 +128,6 @@ export default [
         title: 'Выпускникам',
         url: '',
         icon: 'award',
-      },
-      {
-        title: 'Преподавателям и сотрудникам',
-        url: '',
-        icon: 'user-tie',
       },
     ],
   },

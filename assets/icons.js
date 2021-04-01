@@ -21,5 +21,6 @@ export default {
     'faFileSignature',
     'faChevronRight',
     'faChevronLeft',
+    'faToolbox',
   ],
 }
