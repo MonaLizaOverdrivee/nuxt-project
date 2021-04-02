@@ -13,6 +13,7 @@ h4 {
 h5 {
   @apply text-lg
 }
+/* white theme */
 body.color-scheme--white {
   @apply text-black;
   @apply bg-white;
@@ -20,12 +21,31 @@ body.color-scheme--white {
 body.color-scheme--white .text-access {
   @apply text-black;
 }
+body.color-scheme--white .bg-access {
+  @apply bg-white;
+}
+
+/* black theme */
 body.color-scheme--black {
   @apply text-white;
   @apply bg-black;
 }
+body.color-scheme--black .text-access {
+  @apply text-white;
+}
+body.color-scheme--black .bg-access {
+  @apply bg-black;
+}
+
+
 body.color-scheme--brown {
   @apply text-green-300;
+  @apply bg-yellow-900;
+}
+body.color-scheme--brown .text-access {
+  @apply text-green-300;
+}
+body.color-scheme--brown .bg-access {
   @apply bg-yellow-900;
 }
 

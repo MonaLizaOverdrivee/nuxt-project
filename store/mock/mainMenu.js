@@ -1,6 +1,9 @@
 export default [
   {
-    title: 'Об университете',
+    title: {
+      rus: 'Об университете',
+      eng: 'University',
+    },
     url: '/sveden',
     bg: 'rgb(0, 106, 158)',
     subMenuList: [
@@ -61,7 +64,10 @@ export default [
     ],
   },
   {
-    title: 'Образование',
+    title: {
+      rus: 'Образование',
+      eng: 'Education',
+    },
     bg: 'rgb(0, 65, 98)',
     url: '/education',
     subMenuList: [
@@ -132,7 +138,10 @@ export default [
     ],
   },
   {
-    title: 'Международная деятельность',
+    title: {
+      rus: 'Международная деятельность',
+      eng: 'International activity',
+    },
     url: '/international_action',
     bg: 'rgb(115, 181, 215)',
     subMenuList: [],
@@ -166,7 +175,10 @@ export default [
     ],
   },
   {
-    title: 'Наука',
+    title: {
+      rus: 'Наука',
+      eng: 'Science',
+    },
     url: '/science',
     bg: 'rgb(62, 42, 140)',
     subMenuList: [
@@ -219,7 +231,10 @@ export default [
     ],
   },
   {
-    title: 'Культура и спорт',
+    title: {
+      rus: 'Культура и спорт',
+      eng: 'Culture and sports',
+    },
     url: '/culture_sport',
     bg: 'rgb(91, 112, 131)',
     subMenuList: [
@@ -255,7 +270,10 @@ export default [
     subMenuBtn: [],
   },
   {
-    title: 'Контакты',
+    title: {
+      rus: 'Контакты',
+      eng: 'Contacts',
+    },
     url: '/contacts',
     bg: 'rgb(41, 38, 54)',
     subMenuList: [],

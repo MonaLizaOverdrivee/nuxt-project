@@ -1,79 +1,103 @@
 <template>
-  <div class="sticky top-0 bg-white z-50">
-    <nav class="px-4 font-normal flex shadow-xl">
-      <div class="h-10 lg:h-16 py-1 self-center">
-        <img
-          class="h-full"
-          src="https://assets.vuzopoisk.ru/images/logo/1tgMsxa9.jpg"
-          alt=""
+  <div class="sticky top-0 z-50">
+    <LowVisionBar v-if="$store.state.lowVisionState" />
+    <div class="bg-white bg-access">
+      <nav class="px-4 font-normal flex shadow-xl">
+        <div class="h-10 lg:h-16 py-1 self-center">
+          <img
+            class="h-full"
+            src="https://assets.vuzopoisk.ru/images/logo/1tgMsxa9.jpg"
+            alt=""
+          />
+        </div>
+        <div class="hidden lg:flex py-4">
+          <button
+            v-for="(item, idx) in mainMenu"
+            :key="idx"
+            class="p-2 mx-2 focus:outline-none rounded-md"
+            :class="{ active: idx === indexItem }"
+            @click="onClickMenu(idx, item)"
+          >
+            {{ item.title[$store.state.language] }}
+          </button>
+        </div>
+        <div class="p-2 flex-auto flex justify-end items-center">
+          <div>
+            <span
+              class="cursor-pointer hover:text-primary"
+              @click="$store.commit('switchLanguage')"
+            >
+              {{ $store.state.language.toUpperCase() }}</span
+            >
+            |
+            <font-awesome-icon
+              icon="eye"
+              size="lg"
+              class="hover:text-primary cursor-pointer"
+              @click="$store.dispatch('addLowVisionClass')"
+            />
+          </div>
+        </div>
+        <font-awesome-icon
+          :icon="burgerIcon"
+          size="lg"
+          class="self-center cursor-pointer hover:text-primary ml-auto lg:hidden"
+          @click="mobileMenuVisible = !mobileMenuVisible"
         />
-      </div>
-      <div class="hidden lg:flex py-4">
-        <button
-          v-for="(item, idx) in mainMenu"
-          :key="idx"
-          class="p-2 mx-2 focus:outline-none rounded-md"
-          :class="{ active: idx === indexItem }"
-          @click="onClickMenu(idx, item)"
-        >
-          {{ item.title }}
-        </button>
-      </div>
-      <font-awesome-icon
-        :icon="burgerIcon"
-        size="lg"
-        class="self-center cursor-pointer hover:text-primary ml-auto lg:hidden"
-        @click="mobileMenuVisible = !mobileMenuVisible"
-      />
-    </nav>
-    <div class="relative">
-      <div
-        :class="[
-          'invisible lg:visible bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl menu__content',
-          { 'is-open': isActive },
-        ]"
-      >
+      </nav>
+      <div class="relative">
         <div
-          class="p-1 flex justify-around"
-          :class="'col-span-' + (Math.ceil(colInGrid / 5) + 1)"
+          :class="[
+            'invisible lg:visible bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl menu__content bg-access',
+            { 'is-open': isActive },
+          ]"
         >
-          <div class="flex-auto">
+          <div
+            class="p-1 flex justify-around"
+            :class="'col-span-' + (Math.ceil(colInGrid / 5) + 1)"
+          >
+            <div class="flex-auto">
+              <nuxt-link to="/">
+                <span class="text-primary font-medium text-access"
+                  >Перейти к разделу</span
+                >
+              </nuxt-link>
+            </div>
+            <font-awesome-icon
+              icon="times"
+              size="lg"
+              class="self-center cursor-pointer hover:text-primary"
+              @click="close"
+            />
+          </div>
+          <div
+            v-for="(itm, idx) in selectedItemMenu.subMenuList"
+            :key="idx"
+            class="p-1 pl-3"
+          >
             <nuxt-link to="/">
-              <span class="text-primary font-medium text-access"
-                >Перейти к разделу</span
+              <span
+                class="underline text-primary hover:text-blue-300 text-access"
+                >{{ itm.title }}</span
               >
             </nuxt-link>
           </div>
-          <font-awesome-icon
-            icon="times"
-            size="lg"
-            class="self-center cursor-pointer hover:text-primary"
-            @click="close"
+          <component
+            :is="'Section' + (indexItem + 1)"
+            :items-data="selectedItemMenu.subMenuBtn"
           />
         </div>
-        <div
-          v-for="(itm, idx) in selectedItemMenu.subMenuList"
-          :key="idx"
-          class="p-1 pl-3"
-        >
-          <nuxt-link to="/">
-            <span
-              class="underline text-primary hover:text-blue-300 text-access"
-              >{{ itm.title }}</span
-            >
-          </nuxt-link>
-        </div>
-        <component
-          :is="'Section' + (indexItem + 1)"
-          :items-data="selectedItemMenu.subMenuBtn"
+        <AppMenuMobile
+          :mobileMenuVisible="mobileMenuVisible"
+          :menu="mainMenu"
         />
       </div>
-      <AppMenuMobile :mobileMenuVisible="mobileMenuVisible" :menu="mainMenu" />
     </div>
   </div>
 </template>
 
 <script>
+import LowVisionBar from '../LowVisionBar/LowVisionBar'
 import mainMenu from '../../store/mock/mainMenu'
 import AppMenuMobile from './AppMenuMobile'
 import Section1 from './MenuItemSectionBtn/ItemSection1'
@@ -91,6 +115,7 @@ export default {
     Section5,
     Section6,
     AppMenuMobile,
+    LowVisionBar,
   },
   data() {
     return {

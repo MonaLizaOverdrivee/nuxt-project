@@ -22,5 +22,6 @@ export default {
     'faChevronRight',
     'faChevronLeft',
     'faToolbox',
+    'faEye',
   ],
 }
