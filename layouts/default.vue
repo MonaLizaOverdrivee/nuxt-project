@@ -8,9 +8,26 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import AppMenu from '../components/MainMenu/AppMenu'
 export default {
   components: { AppMenu },
+  head() {
+    return {
+      bodyAttrs: {
+        class: [this.colorScheme, this.sizeScheme],
+      },
+    }
+  },
+  computed: {
+    ...mapGetters('lowVision', ['lowVisionState', 'colorClass', 'sizeClass']),
+    colorScheme() {
+      return this.lowVisionState ? this.colorClass : ''
+    },
+    sizeScheme() {
+      return this.lowVisionState ? this.sizeClass : ''
+    },
+  },
 }
 </script>
 

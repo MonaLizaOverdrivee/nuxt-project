@@ -1,9 +1,12 @@
 <template>
   <div class="sticky top-0 z-50">
-    <LowVisionBar v-if="$store.state.lowVisionState" />
+    <LowVisionBar v-if="$store.getters['lowVision/lowVisionState']" />
     <div class="bg-white bg-access">
       <nav class="px-4 font-normal flex shadow-xl">
-        <div class="h-10 lg:h-16 py-1 self-center">
+        <div
+          v-if="!$store.getters['lowVision/lowVisionState']"
+          class="h-10 lg:h-16 py-1 self-center"
+        >
           <img
             class="h-full"
             src="https://assets.vuzopoisk.ru/images/logo/1tgMsxa9.jpg"
@@ -34,7 +37,7 @@
               icon="eye"
               size="lg"
               class="hover:text-primary cursor-pointer"
-              @click="$store.dispatch('addLowVisionClass')"
+              @click="$store.dispatch('lowVision/addLowVisionClass')"
             />
           </div>
         </div>
@@ -48,7 +51,7 @@
       <div class="relative">
         <div
           :class="[
-            'invisible lg:visible bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-1 border-t-2 border-primary shadow-xl menu__content bg-access',
+            'invisible lg:visible bg-white h-auto p-4 w-full absolute top-0 left-0 grid grid-rows-6-auto grid-flow-col auto-cols-fr gap-4 border-t-2 border-primary shadow-xl menu__content bg-access border-access',
             { 'is-open': isActive },
           ]"
         >
@@ -84,8 +87,23 @@
           </div>
           <component
             :is="'Section' + (indexItem + 1)"
+            v-if="!$store.getters['lowVision/lowVisionState']"
             :items-data="selectedItemMenu.subMenuBtn"
           />
+          <template v-else>
+            <div
+              v-for="itm in selectedItemMenu.subMenuBtn"
+              :key="itm"
+              class="p-1 pl-3"
+            >
+              <nuxt-link to="/">
+                <span
+                  class="underline text-primary hover:text-blue-300 text-access"
+                  >{{ itm.title }}</span
+                >
+              </nuxt-link>
+            </div>
+          </template>
         </div>
         <AppMenuMobile
           :mobileMenuVisible="mobileMenuVisible"

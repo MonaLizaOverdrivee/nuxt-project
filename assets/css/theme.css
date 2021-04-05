@@ -24,6 +24,13 @@ body.color-scheme--white .text-access {
 body.color-scheme--white .bg-access {
   @apply bg-white;
 }
+body.color-scheme--white .border-access {
+  @apply border-black;
+}
+body.color-scheme--white button.active {
+  @apply bg-black;
+  @apply text-white;
+}
 
 /* black theme */
 body.color-scheme--black {
@@ -35,6 +42,13 @@ body.color-scheme--black .text-access {
 }
 body.color-scheme--black .bg-access {
   @apply bg-black;
+}
+body.color-scheme--black .border-access {
+  @apply border-white;
+}
+body.color-scheme--black button.active {
+  @apply bg-white;
+  @apply text-black;
 }
 
 
@@ -48,7 +62,15 @@ body.color-scheme--brown .text-access {
 body.color-scheme--brown .bg-access {
   @apply bg-yellow-900;
 }
+body.color-scheme--brown .border-access {
+  @apply border-green-300;
+}
+body.color-scheme--brown button.active {
+  @apply bg-green-300;
+  @apply text-yellow-900;
+}
 
+/* size scheme */
 body.size-scheme--small {
   @apply text-lg;
 }
