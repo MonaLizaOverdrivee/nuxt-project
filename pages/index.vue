@@ -3,6 +3,7 @@
     <SliderSection />
     <AddmissFaculSection />
     <ContentDigest />
+    <NewsSection />
     <div class="border-red-800 border-2 bg-primary mt-10">
       <Logo />
       <h1 class="title">nuxt-test</h1>
@@ -35,9 +36,15 @@
 import SliderSection from '@/components/Home/Slider/SliderSection'
 import AddmissFaculSection from '@/components/Home/AddmissionsAndFaculties/CommonBlock'
 import ContentDigest from '@/components/Home/ContentDigest/ContentDigest'
+import NewsSection from '@/components/Home/News/NewsSection'
 
 export default {
-  components: { SliderSection, AddmissFaculSection, ContentDigest },
+  components: {
+    SliderSection,
+    AddmissFaculSection,
+    ContentDigest,
+    NewsSection,
+  },
 }
 </script>
 
