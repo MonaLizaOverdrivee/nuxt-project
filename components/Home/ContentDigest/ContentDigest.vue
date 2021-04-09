@@ -2,24 +2,26 @@
   <div class="mt-2 md:mt-10 bg-access">
     <div class="container py-5">
       <div
-        class="grid gap-1 lg:gap-0 sm:grid-flow-row sm:grid-cols-2 lg:grid-flow-col auto-cols-fr grid-rows-4"
+        class="grid gap-1 sm:grid-flow-row sm:grid-cols-2 lg:grid-flow-col auto-cols-fr grid-rows-4"
       >
         <div
           v-for="itm in section"
           :key="itm"
-          class="flex flex-col justify-end p-5 h-56 2xl:h-72 transform hover:-translate-y-2 cursor-pointer hover:shadow-2xl transition duration-300 ease-linear realative z-20"
+          class="flex flex-col justify-end p-5 h-56 2xl:h-72 transform hover:-translate-y-2 cursor-pointer hover:shadow-2xl transition duration-300 ease-linear realative z-20 border border-transparent border-access bg-access"
         >
           <div
+            v-if="!$store.getters['lowVision/lowVisionState']"
             class="absolute inset-0 z-20"
             :style="'background-color:' + 'rgb(0, 136, 204, 0.6)'"
           ></div>
           <img
+            v-if="!$store.getters['lowVision/lowVisionState']"
             :src="itm.img"
-            alt=""
             class="w-full h-full absolute inset-0 object-cover z-10"
+            alt=""
           />
           <div class="z-20">
-            <span class="text-4xl text-white">{{ itm.title }}</span>
+            <span class="text-4xl text-white text-access">{{ itm.title }}</span>
           </div>
         </div>
         <div
@@ -66,8 +68,7 @@ export default {
         {
           title: 'Раздел для лиц с ОВЗ',
           url: '',
-          img:
-            'https://lh3.googleusercontent.com/proxy/G1gCAxRqsMSgQp1nVQgtLxXO1Mw6z-C_j4NjGVayC8zElXur6oCwjQmLB1a9yX9YTJ-H2qqu2eHiyCvWLl8r9Etsvii1JsRd87nNBHF4ZqZGFsMl974ZCInfcvC_ZcYNMihNko2tfVqRsNZCM4jYYe3mqBjWvzWT94jjvwBh',
+          img: 'https://www.colorhexa.com/0088cc.png',
         },
         {
           title: 'e-University',
@@ -78,8 +79,7 @@ export default {
         {
           title: 'Учебное судно "Херсонес"',
           url: '',
-          img:
-            'https://lh3.googleusercontent.com/proxy/aBYWcuv4FFae4-zKZ9__wFT9s-zxpbTbzpjN0MaAErZcWTRKubD_FqBHPD7EW7UT2AcCplh25oCpN9VCJj7Hh8V4qgisicp6ilPENcbVyFSz8uhayATihSLGn10XUGQRIj2E',
+          img: 'https://www.aumsu.ru/images/banners/l-198772.jpg',
         },
         {
           title: 'Фотогоазета',

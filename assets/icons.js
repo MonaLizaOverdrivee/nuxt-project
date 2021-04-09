@@ -25,4 +25,6 @@ export default {
     'faEye',
     'faLongArrowAltRight',
   ],
+  regular: ['faCopyright'],
+  brands: ['faInstagram', 'faVk'],
 }

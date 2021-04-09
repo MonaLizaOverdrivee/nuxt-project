@@ -1,6 +1,6 @@
 <template>
   <div>
-    <SliderSection />
+    <SliderSection v-if="!$store.getters['lowVision/lowVisionState']" />
     <AddmissFaculSection />
     <ContentDigest />
     <NewsSection />
