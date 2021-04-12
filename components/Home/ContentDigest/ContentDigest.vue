@@ -1,13 +1,16 @@
 <template>
-  <div class="mt-2 md:mt-10 bg-access">
+  <div class="mt-2 md:mt-10 bg-blue-100 bg-access">
     <div class="container py-5">
       <div
-        class="grid gap-1 sm:grid-flow-row sm:grid-cols-2 lg:grid-flow-col auto-cols-fr grid-rows-4"
+        class="grid gap-1 lg:gap-0 sm:grid-flow-row sm:grid-cols-2 lg:grid-flow-col auto-cols-fr grid-rows-4"
       >
         <div
           v-for="itm in section"
           :key="itm"
-          class="flex flex-col justify-end p-5 h-56 2xl:h-72 transform hover:-translate-y-2 cursor-pointer hover:shadow-2xl transition duration-300 ease-linear realative z-20 border border-transparent border-access bg-access"
+          class="flex flex-col justify-end p-5 h-56 2xl:h-72 transform hover:-translate-y-2 cursor-pointer hover:shadow-2xl transition duration-300 ease-linear realative z-20 bg-access"
+          :class="{
+            'border border-access': $store.getters['lowVision/lowVisionState'],
+          }"
         >
           <div
             v-if="!$store.getters['lowVision/lowVisionState']"
@@ -25,14 +28,44 @@
           </div>
         </div>
         <div
-          class="bg-red-300 flex justify-center items-center lg:col-start-3 lg:col-span-2 lg:row-span-2 lg:-ml-24 lg:-mb-24 lg:-mt-10"
+          class="bg-blue-100 flex items-center justify-center lg:col-start-3 lg:col-span-2 lg:row-span-2 lg:-ml-24 lg:-mb-24 lg:-mt-10"
         >
-          <div class="">1</div>
+          <div class="">sdasasdsadasdasdasddsa</div>
         </div>
         <div
-          class="bg-green-300 flex justify-center items-center lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-2"
+          class="bg-blue-100 flex justify-center lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-2 bg-access"
         >
-          <div class="">1</div>
+          <div class="w-3/6 flex items-center justify-center">
+            <div>
+              <h1 class="py-2.5">Военная кафедра</h1>
+              <p>
+                Реализация программ военной подготовки офицеров, сержантов
+                (старшин), солдат (матросов) запаса на военных кафедрах по
+                военно-учётным специальностям; участие в проведении
+                воспитательной работы и работы по военно-профессиональной
+                ориентации курсантов Университета.
+              </p>
+              <div class="">
+                <button
+                  class="border border-primary p-2 text-primary hover:bg-primary hover:text-white font-middle transition-all mt-2.5"
+                >
+                  Плавсостав
+                </button>
+                <button
+                  class="border border-primary p-2 text-primary hover:bg-primary hover:text-white font-middle transition-all mt-2.5"
+                >
+                  Наземные специальности
+                </button>
+              </div>
+            </div>
+          </div>
+          <div v-if="!$store.getters['lowVision/lowVisionState']" class="w-3/6">
+            <img
+              src="https://www.aumsu.ru/images/banners/Main_page/obr_img.png"
+              alt=""
+              class="w-full h-full object-cover object-left"
+            />
+          </div>
         </div>
       </div>
     </div>

@@ -5,12 +5,12 @@
   >
     <div class="flex flex-col">
       <div v-for="(itm, idx) in menu" :key="itm" class="flex-auto p-2">
-        <span class="text-xl font-medium" @click="open(idx)">{{
-          itm.title
+        <span class="text-xl font-medium cursor-pointer" @click="open(idx)">{{
+          itm.title[$store.state.language]
         }}</span>
         <ul v-if="indexItem === idx" class="ml-2">
           <li v-for="sub in submenu(itm)" :key="sub" class="my-2 text-primary">
-            <template v-if="itm.title === 'Контакты'">
+            <template v-if="itm.title[$store.state.language] === 'Контакты'">
               <div>
                 <strong>{{ sub.title }}:</strong>
               </div>
