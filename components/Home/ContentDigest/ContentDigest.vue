@@ -28,9 +28,17 @@
           </div>
         </div>
         <div
-          class="bg-blue-100 flex items-center justify-center lg:col-start-3 lg:col-span-2 lg:row-span-2 lg:-ml-24 lg:-mb-24 lg:-mt-10"
+          class="flex items-center justify-center lg:col-start-3 lg:col-span-2 lg:row-span-2 bg-access"
         >
-          <div class="">sdasasdsadasdasdasddsa</div>
+          <div class="w-3/6">
+            <h1 class="py-2.5">Объявления</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Praesentium beatae natus vero neque officiis esse adipisci minima
+              reiciendis voluptatibus corporis amet, saepe aliquid culpa labore
+              doloremque nisi, doloribus nam quos.
+            </p>
+          </div>
         </div>
         <div
           class="bg-blue-100 flex justify-center lg:col-start-1 lg:col-span-2 lg:row-start-3 lg:row-span-2 bg-access"
@@ -47,12 +55,12 @@
               </p>
               <div class="">
                 <button
-                  class="border border-primary p-2 text-primary hover:bg-primary hover:text-white font-middle transition-all mt-2.5"
+                  class="border border-primary p-2 text-primary hover:bg-primary hover:text-white font-middle transition-all mt-2.5 border-access bg-access text-access"
                 >
                   Плавсостав
                 </button>
                 <button
-                  class="border border-primary p-2 text-primary hover:bg-primary hover:text-white font-middle transition-all mt-2.5"
+                  class="border border-primary p-2 text-primary hover:bg-primary hover:text-white font-middle transition-all mt-2.5 border-access bg-access text-access"
                 >
                   Наземные специальности
                 </button>
