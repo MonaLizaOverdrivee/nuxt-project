@@ -5,7 +5,8 @@
       <nav class="px-4 font-normal flex shadow-xl">
         <div
           v-if="!$store.getters['lowVision/lowVisionState']"
-          class="h-10 lg:h-16 py-1 self-center"
+          class="h-10 lg:h-16 py-1 self-center cursor-pointer"
+          @click="$router.push('/')"
         >
           <img
             class="h-full"
@@ -60,7 +61,7 @@
             :class="'col-span-' + (Math.ceil(colInGrid / 5) + 1)"
           >
             <div class="flex-auto">
-              <nuxt-link to="/">
+              <nuxt-link v-if="colInGrid" :to="selectedItemMenu.url">
                 <span class="text-primary font-medium text-access"
                   >Перейти к разделу</span
                 >
@@ -78,7 +79,7 @@
             :key="idx"
             class="p-1 pl-3"
           >
-            <nuxt-link to="/">
+            <nuxt-link to="selectedItemMenu.url + itm.url">
               <span
                 class="underline text-primary hover:text-blue-300 text-access"
                 >{{ itm.title }}</span
@@ -153,6 +154,9 @@ export default {
         ? this.selectedItemMenu.subMenuList.length
         : 0
     },
+  },
+  watch: {
+    $route: 'close',
   },
   methods: {
     onClickMenu(i, itm) {

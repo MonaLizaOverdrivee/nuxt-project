@@ -31,7 +31,7 @@
           class="flex items-center justify-center lg:col-start-3 lg:col-span-2 lg:row-span-2 bg-access"
         >
           <div class="w-3/6">
-            <h1 class="py-2.5">Объявления</h1>
+            <span class="py-2.5 text-4xl text-access">Объявления</span>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Praesentium beatae natus vero neque officiis esse adipisci minima
@@ -45,7 +45,7 @@
         >
           <div class="w-3/6 flex items-center justify-center">
             <div>
-              <h1 class="py-2.5">Военная кафедра</h1>
+              <span class="py-2.5 text-4xl text-access">Военная кафедра</span>
               <p>
                 Реализация программ военной подготовки офицеров, сержантов
                 (старшин), солдат (матросов) запаса на военных кафедрах по
