@@ -1,36 +1,43 @@
 <template>
   <div>
-    <div class="flex justify-center items-center faculty__header relative">
-      <div
-        class="absolute inset-0 z-20"
-        style="background-color: rgb(0, 0, 0, 0.6)"
-      ></div>
-      <div class="absolute inset-0">
-        <iframe
-          class="object-cover z-10"
-          height="100%"
-          width="100%"
-          src="https://www.youtube.com/embed/6qGiXY1SB68?autoplay=1&mute=1&controls=0&showinfo=0&autohide=1"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div>
-      <div class="z-20">
-        <h1 class="text-white">{{ dataTest.title }}</h1>
-      </div>
-    </div>
+    <FacHeader
+      :contact="dataTest.contact"
+      :title="dataTest.title"
+      :img="dataTest.wallpapper"
+    />
+    <PageBreadcrumbs />
+    <FacBody />
   </div>
 </template>
 
 <script>
+import FacHeader from '../../../components/Pages/Faculty/FacHeader'
+import FacBody from '../../../components/Pages/Faculty/FacBody'
+import PageBreadcrumbs from '../../../components/Pages/PageBreadcrumbs'
+
 export default {
+  components: { FacHeader, FacBody, PageBreadcrumbs },
+  meta: {
+    bread: 'asadasd',
+  },
   data() {
     return {
       dataTest: {
         title: 'Судомеханический факультет',
-        wallpapper: '',
+        wallpapper:
+          'https://mfame.guru/wp-content/uploads/2018/11/Engine-Room.jpg',
+        contact: {
+          phone: '8 (8617) 76-78-87',
+          email: 'Email@mail.ru',
+          location: 'Учебный корпус, 3 этаж',
+        },
+        adminStaff: {
+          chief: 'Игнатенко Александр',
+          alternateChief: [
+            'Каурова Елена Александровна',
+            'Остюк Андрей Васильевич',
+          ],
+        },
       },
     }
   },

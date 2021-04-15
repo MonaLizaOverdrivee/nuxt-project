@@ -24,7 +24,9 @@ export default {
     'faToolbox',
     'faEye',
     'faLongArrowAltRight',
+    'faPhone',
+    'faMapMarkerAlt',
   ],
-  regular: ['faCopyright'],
+  regular: ['faCopyright', 'faEnvelope'],
   brands: ['faInstagram', 'faVk'],
 }

@@ -22,7 +22,7 @@
           @mouseover="hoveredArticleIndex = idx"
         >
           <div>
-            <span class="text-2xl font-medium">{{ itm.title }}</span>
+            <span class="font-bold">{{ itm.title }}</span>
           </div>
           <div class="flex-auto">
             <p>
