@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <h1>{{ $route.path }}</h1>
-  </div>
+  <div>router</div>
 </template>
 
 <script>

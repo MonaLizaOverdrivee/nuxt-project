@@ -40,9 +40,9 @@ export default {
   methods: {
     async fetchT() {
       const some = await this.$axios.$get(
-        'http://localhost:1337/Products/2/title'
+        `http://localhost:1337/Pages?URL=${this.$route.fullPath}`
       )
-      console.log(some)
+      console.log('response', some)
       return some
     },
   },

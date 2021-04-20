@@ -18,6 +18,21 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@assets/css/theme.css'],
 
+  router: {
+    extendRoutes(routes, resolve) {
+      let path = ''
+      const PageLevel = 3
+      for (let i = 0; i < PageLevel; i++) {
+        path += '/:page_' + (i + 1)
+        routes.push({
+          path,
+          component: resolve(__dirname, 'pages/AppPage.vue'),
+          name: 'PageLevel-' + (i + 1),
+        })
+      }
+    },
+  },
+
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
