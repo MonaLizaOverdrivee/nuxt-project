@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import FacHeader from '../../../components/Pages/Faculty/FacHeader'
-import FacBody from '../../../components/Pages/Faculty/FacBody'
-import PageBreadcrumbs from '../../../components/Pages/PageBreadcrumbs'
+import PageBreadcrumbs from '../PageBreadcrumbs'
+import FacHeader from './FacHeader'
+import FacBody from './FacBody'
 
 export default {
   components: { FacHeader, FacBody, PageBreadcrumbs },

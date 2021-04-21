@@ -1,7 +1,6 @@
 <template>
   <div class="my-4 container">
     <span class="text-primary">Факультеты > Судомеханический</span>
-    {{ $route.meta }}
   </div>
 </template>
 
