@@ -16,6 +16,7 @@
       <div class="border-2 ml-5 flex-auto">
         <h2>О факультетете</h2>
         <p v-html="tHtml"></p>
+        <h2 class="mt-5">title</h2>
         <Par />
         <div>asd</div>
       </div>
